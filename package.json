@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/greenbea/njwfs/issues"
   },
-  "homepage": "https://github.com/greenbea/njwfs#readme"
+  "homepage": "https://github.com/greenbea/njwfs#readme",
+  "dependencies": {
+    "ws": "^7.3.0"
+  }
 }
