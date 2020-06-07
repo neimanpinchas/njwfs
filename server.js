@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const uuid = require('uuid').v4;
 
-const getdirdetails = require('./getdirdetails.js');
+const getdirdetails = require('./modules/getdirdetails.js');
 
 
 cl = console.log;
