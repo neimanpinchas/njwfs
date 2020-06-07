@@ -4,6 +4,8 @@ const fs = require('fs');
 const uuid = require('uuid').v4;
 
 const api_handler = require('./functions/apiv1.js');
+const four04 = require('./functions/404.js');
+const web_client = require('./web_client');
 
 
 cl = console.log;
@@ -17,15 +19,17 @@ cl("Server listening on port "+cfg.http_port)
 
 function fsserver(req,res){
     if(req.method == "GET"){
-        if(req.url.startsWith("/api/v1")){
-            api_handler(req,res)
+        if(req.url.startsWith(cfg.api_base_url)){
+            api_handler(cfg,req,res)
+        }else if(req.url.startsWith(cfg.html_base_url)){
+            web_client(cfg,req,res)
         }else{
-            four04(req,res)
+            four04(cfg,req,res)
         }
     }else if(req.method == "POST"){
         res.end("post")
     }else{
-        res.ens("somthing worng")
+        res.end("somthing worng")
     }
 }
 

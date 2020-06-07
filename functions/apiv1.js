@@ -7,8 +7,8 @@ const cl = console.log;
 
 delete_confirm = {};
 
-module.exports = function (req,res){
-    let url = req.url.split(/^\/api\/v1/)[1];
+module.exports = function (cfg,req,res){
+    let url = req.url.substring(cfg.api_base_url.length);
     if(url.startsWith("/dir/")){
         getdirdetails(cfg,url.split(/^\/dir/)[1],(data)=>{
             res.writeHead(200)

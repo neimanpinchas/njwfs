@@ -1,4 +1,7 @@
 {
     "root_path": "test",
-    "http_port": 8080
+    "http_port": 8080,
+    "api_base_url":"/api/v1",
+    "html_base_url":"/drive"
+
 }
