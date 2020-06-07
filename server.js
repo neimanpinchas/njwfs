@@ -2,6 +2,8 @@ const http = require("http");
 const path = require('path');
 const fs = require('fs');
 
+const getdirdetails = require('./getdirdetails.js');
+
 
 cl = console.log;
 
@@ -12,30 +14,14 @@ cl("Server listening on port "+cfg.http_port)
 
 function fsserver(req,res){
     if(req.url.startsWith("/dir/")){
-        listdir(req,res)
+        let local_path = cfg.root_path + req.url.split(/^\/dir/)[1];
+        getdirdetails(local_path,(data)=>{
+            res.writeHead(200)
+            res.write(JSON.stringify(data))
+            res.end()
+        })
     }else{
         res.writeHead(404)
         res.end("404")
     }
-}
-
-function listdir(req,res){
-    let local_path = cfg.root_path + req.url.split(/^\/dir/)[1];
-    fs.readdir(local_path,(err,data) => {
-        let fstree = {}
-        for(i of data){
-            fs.stat(local_path + "/" + i,(err,data)=>{
-                fstree[i] = data
-            
-                if(fstree[i].isFile()){
-                    fstree[i].type = "file";
-                }else if(fstree[i].isDirectory()){
-                    fstree[i].type = "dir";
-                }else{
-                    fstree[i].type = "N/A";
-                }
-            })
-        }
-        res.end(JSON.stringify(fstree))
-    })
 }
