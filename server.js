@@ -17,8 +17,8 @@ cl("Server listening on port "+cfg.http_port)
 
 function fsserver(req,res){
     if(req.url.startsWith("/dir/")){
-        let local_path = cfg.root_path + req.url.split(/^\/dir/)[1];
-        getdirdetails(local_path,(data)=>{
+        //let local_path = cfg.root_path + req.url.split(/^\/dir/)[1];
+        getdirdetails(cfg,req.url.split(/^\/dir/)[1],(data)=>{
             res.writeHead(200)
             res.write(JSON.stringify(data))
             res.end()

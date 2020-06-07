@@ -1,12 +1,14 @@
 const fs = require("fs");
 var cl = console.log;
 
-module.exports = function(local_path,cb){
+module.exports = function(cfg,req_path,cb){
+    local_path = cfg.root_path+req_path
     fs.readdir(local_path,(err,data) => {
         var fstree = [];
         for(i in data){
             fstree[i] = {
-                name:data[i]
+                name:data[i],
+                path:req_path
             }
             getfilestatus(local_path+"/"+data[i],i,(data_detail,index)=>{
                 fstree[index].stats = data_detail;
