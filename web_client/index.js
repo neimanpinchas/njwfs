@@ -34,7 +34,6 @@ module.exports = function(cfg,req,res){
                     res.write(data);
                     res.end()
                 };
-
             };
         });
     }else{
@@ -55,10 +54,6 @@ module.exports = function(cfg,req,res){
 };
 
 function sethtmlvar(data,cfg,cb){
-    html = data
-    let list = data.match(/\$\$\{\{[\w\.\d]+\}\}/g)
-    for(i of list){
-        data.replace(i, eval(i.match(/\$\$\{\{([\w\.\d]+)\}\}/)[1]))
-    }
-    cb(data)
+    html = eval("`"+data+"`")
+    cb(html)
 }
