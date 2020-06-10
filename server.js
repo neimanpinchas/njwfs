@@ -9,6 +9,7 @@ const web_client = require('./web_client');
 
 
 cl = console.log;
+cl10 = console.log//debug
 
 delete_conf = {};
 
@@ -18,6 +19,7 @@ httpserver = http.createServer(fsserver).listen(cfg.http_port);
 cl("Server listening on port "+cfg.http_port)
 
 function fsserver(req,res){
+    cl10(req.url)
     if(req.method == "GET"){
         if(req.url.startsWith(cfg.api_base_url)){
             api_handler(cfg,req,res)
