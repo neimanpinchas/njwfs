@@ -1,3 +1,29 @@
 html{
-    background-color: aqua;
+    background-color: blueviolet;
+}
+
+.fm{
+    background-color:aqua ;
+    height: 90vh;
+    width: 90vw;
+    margin: 5vh 5vw 5vh 5vw;
+}
+
+.fm-header {
+    border-bottom: black solid 1px;
+}
+
+.fm-header-col {
+    display: inline-block;
+    min-width: 100px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.fm-header-name {
+
+}
+
+.fm-header-filesize {
+    float: right;
 }
