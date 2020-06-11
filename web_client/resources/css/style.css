@@ -27,3 +27,7 @@ html{
 .fm-header-filesize {
     float: right;
 }
+
+.fm-row-filesize {
+    float: right;
+}
