@@ -15,10 +15,10 @@
             <div class="fm-header-filesize fm-header-col">File&nbspSize</div>
         </div>
         
-        <div id="fm-rows" v-for="files in directory">
-            <div class="fm-row">
+        <div id="fm-rows">
+            <div class="fm-row" v-for="files in directory">
                 <div class="fm-row-name">{{files.name}}</div>
-                <div class="fm-row-filesize">{{files.filezize}}</div>
+                <div class="fm-row-filesize">{{files.stats.size}}</div>
             </div>
         </div>
     </div>
