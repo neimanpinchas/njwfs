@@ -38,6 +38,6 @@ module.exports = function (cfg,req,res){
             res.end(req.url)    
         }
     }else{
-        four04(req,res)
+        four04(cfg,req,res)
     }
 }
