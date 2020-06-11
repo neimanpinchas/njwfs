@@ -11,17 +11,17 @@
 <body>
     <div class="fm">
         <div class="fm-header">
-            <div class="fm-header-name fm-header-col">
-                Name
-            </div>
-            <div class="fm-header-filesize fm-header-col">
-                File&nbspSize
+            <div class="fm-header-name fm-header-col">Name</div>
+            <div class="fm-header-filesize fm-header-col">File&nbspSize</div>
+        </div>
+        
+        <div id="fm-rows" v-for="files in directory">
+            <div class="fm-row">
+                <div class="fm-row-name">{{files.name}}</div>
+                <div class="fm-row-filesize">{{files.filezize}}</div>
             </div>
         </div>
-        <div class="fm-rows">
-            <div class="fm-row-name">Test1</div>
-            <div class="fm-row-filesize">23445</div>
-        </div>
+    </div>
     </div>
 </body>
 <script src="${cfg.html_base_url}/resources/js/script.js"></script>

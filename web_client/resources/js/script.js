@@ -1,13 +1,20 @@
 const app_path = window.location.pathname.split("/")[1]
 var cl = console.log;
-var hello
 
+var fm = new Vue({
+    el: "#fm-rows",
+    data: {
+        directory: [
+
+        ]
+    }
+})
 
 $.ajax({
     url:"/api/v1/dir/",
     type: "GET",
     success: function(data){
-        hello =JSON.parse(data)
+        fm.directory = JSON.parse(data)
     },
     error: function error(response) {
         alert("Network error");
