@@ -28,6 +28,10 @@ html{
     float: right;
 }
 
+.fm-row {
+    border-bottom: solid grey 1px;
+}
+
 .fm-row-filesize {
     float: right;
 }
