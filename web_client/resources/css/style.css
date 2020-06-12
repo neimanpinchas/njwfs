@@ -22,7 +22,8 @@ html{
     display: inline-block;
     min-width: 100px;
     font-weight: bold;
-    padding: 10px;
+    line-height: 5vh;
+    margin: 0 5px 0 5px;
 }
 
 .fm-header-name {
@@ -35,7 +36,7 @@ html{
 
 #fm-rows {
     height: 85vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .fm-row {
@@ -47,6 +48,7 @@ html{
     line-height: 5vh;
     vertical-align: middle;
     font-family: sans-serif;
+    margin: 0 5px 0 5px;
 
 }
 
