@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html{
     background-color: blueviolet;
 }
@@ -11,6 +15,7 @@ html{
 
 .fm-header {
     border-bottom: black solid 1px;
+    height: 5vh;
 }
 
 .fm-header-col {
@@ -28,8 +33,14 @@ html{
     float: right;
 }
 
+#fm-rows {
+    height: 85vh;
+    overflow: scroll;
+}
+
 .fm-row {
     border-bottom: solid grey 1px;
+    height: 5%;
 }
 
 .fm-row-filesize {
