@@ -21,9 +21,9 @@ module.exports = function (cfg,req,res){
         delete_confirm[conf_uuid] = local_path;
         res.setHeader('content-type', 'text/html');
         res.writeHead(200);
-        res.write("please conferm you want to delete "+local_path+"<br>")    
-        res.write("confermation code is "+conf_uuid+"<br>")    
-        res.write("<a href='/delconf/"+conf_uuid+"'>click to conferm</a>")  
+        res.write("please confirm you want to delete "+local_path+"<br>")    
+        res.write("confirmation code is "+conf_uuid+"<br>")    
+        res.write("<a href='/delconf/"+conf_uuid+"'>click to confirm</a>")  
         res.end()  
     }else if(url.startsWith("/delconf/")){
         if(delete_confirm[url.split("delconf/")[1]]){
